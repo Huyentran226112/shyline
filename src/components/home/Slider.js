@@ -4,7 +4,7 @@ function Slider(props) {
     return (
         <>
             <section className="section-slider height-v">
-                <OwlCarousel loop={true} autoplayHoverPause={true} items={1} id="index12" className="owl-carousel  owl-theme">
+                <OwlCarousel loop={true} autoplay={true} items={1} id="index12" className="owl-carousel  owl-theme">
                     <div className="item">
                         <img
                             alt="Third slide"

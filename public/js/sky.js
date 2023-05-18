@@ -183,7 +183,9 @@ $(document).ready(function() {
     /*end/select*/
 
     /*scroll-header*/
-    var stickyNav = $('header').offset().top;
+    // var stickyNav = $('header').offset().top;
+    var stickyNav = $('header').length ? $('header').offset().top : 0;
+
     $(window).scroll(function() {
         if ($(window).scrollTop() > stickyNav) {
             $('header').addClass('header-top-sky');
@@ -195,38 +197,42 @@ $(document).ready(function() {
 
     /*datepicker*/
     $(function() {
-        $('#datepicker').each(function() {
-            $(this).datepicker({
-                autoclose: true,
-                todayHighlight: true
-            }).datepicker('update', new Date());
-        });
-        $('#datepickeri').each(function() {
-            $(this).datepicker({
-                autoclose: true,
-                todayHighlight: true
-            }).datepicker('update', new Date());
-        });
-
-        $('#datepicker1').each(function() {
-            $("#datepicker1").datepicker({
-                dateFormat: 'mm/dd/yy',
-                changeMonth: true,
-                changeYear: true,
-                yearRange: '-100y:c+nn',
-                maxDate: '-1d'
+        setTimeout(() => {
+            $('#datepicker').each(function() {
+                $(this).datepicker({
+                    autoclose: true,
+                    todayHighlight: true
+                }).datepicker('update', new Date());
             });
-        });
-
-        $('#datepicker2').each(function() {
-            $("#datepicker2").datepicker({
-                dateFormat: 'mm/dd/yy',
-                changeMonth: true,
-                changeYear: true,
-                yearRange: '-100y:c+nn',
-                maxDate: '-1d'
+            $('#datepickeri').each(function() {
+                $(this).datepicker({
+                    autoclose: true,
+                    todayHighlight: true
+                }).datepicker('update', new Date());
             });
-        });
+    
+            $('#datepicker1').each(function() {
+                $("#datepicker1").datepicker({
+                    dateFormat: 'mm/dd/yy',
+                    changeMonth: true,
+                    changeYear: true,
+                    yearRange: '-100y:c+nn',
+                    maxDate: '-1d'
+                });
+            });
+    
+            $('#datepicker2').each(function() {
+                $("#datepicker2").datepicker({
+                    dateFormat: 'mm/dd/yy',
+                    changeMonth: true,
+                    changeYear: true,
+                    yearRange: '-100y:c+nn',
+                    maxDate: '-1d'
+                });
+            });
+        }, 1000);
+
+        
 
     });
 
