@@ -116,7 +116,7 @@ function Header(props) {
                                         </a>
                                         <ul className="dropdown-menu icon-fa-caret-up submenu-hover">
                                             <li>
-                                                <a href="room_1.html" title="">
+                                                <a href="/room" title="">
                                                     Room 1
                                                 </a>
                                             </li>
