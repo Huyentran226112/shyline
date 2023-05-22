@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import OwlCarousel from 'react-owl-carousel';
 import CategoryModel from '../../models/CategoryModel';
+import { Link } from 'react-router-dom';
 function Room(props) {
     const [categories, setCategories] = useState([]);
     useEffect(() => {
@@ -29,16 +30,20 @@ function Room(props) {
                         {categories.map((category, key) => (
                             <div className="col-lg-4 col-md-4 col-sm-6 col-xs-6 ">
                                 <div className="wrap-box">
-                                    <div className="box-img">
-                                        <img
-                                            src={category.image}
-                                            className="img-responsive"
-                                            alt="PLuxury Room"
-                                            title="Luxury Room"
-                                        />
-                                    </div>
+                                    <Link to={"/category/" + category.id}>
+                                        <div className="box-img">
+                                            <img
+                                                src={category.image}
+                                                className="img-responsive"
+                                                alt="PLuxury Room"
+                                                title="Luxury Room"
+                                            />
+                                        </div>
+                                    </Link>
                                     <div className="rooms-content">
-                                        <h4 className="sky-h4">{category.name}</h4>
+                                        <Link to={"/category/" + category.id}>
+                                            <h4 className="sky-h4">{category.name}</h4>
+                                        </Link>
                                     </div>
                                 </div>
                             </div>
