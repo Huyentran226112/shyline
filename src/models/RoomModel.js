@@ -67,5 +67,18 @@ class RoomModel {
             });
         });
     }
+    getRelatedRooms(id){
+        return new Promise( (resolve, reject) => {
+            axios
+            .get(this.api_url+'/'+id+"/related")
+            .then(res => {
+                resolve(res);
+            })
+            .catch(err => {
+                reject(err)
+            });
+        });
+    }
+
 }
 export default new RoomModel();

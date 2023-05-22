@@ -12,10 +12,10 @@ function Slider(props) {
                             className="img-responsive"
                         />
                         <div className="carousel-caption">
-                            <h1>Welcome to Skyline</h1>
+                            <h1>Chào mừng đến với đường chân trời </h1>
                             <p>
                                 <span className="line-t" />
-                                Hotels &amp; Resorts <span className="line-b" />
+                                KHÁCH SẠN &amp; KHU NGHỈ DƯỠNG <span className="line-b" />
                             </p>
                         </div>
                     </div>
@@ -27,10 +27,10 @@ function Slider(props) {
                         />
                         <div className="container">
                             <div className="carousel-caption ">
-                                <h1 className="v2">Enjoy a Luxury Experience</h1>
+                                <h1 className="v2">Tận hưởng trải nghiệm sang trọng</h1>
                                 <p className="p-v2">
                                     <span className="line-t" />
-                                    Hotels &amp; Resorts <span className="line-b" />
+                                    KHÁCH SẠN &amp; KHU NGHỈ DƯỠNG <span className="line-b" />
                                 </p>
                             </div>
                         </div>
