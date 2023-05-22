@@ -23,29 +23,24 @@ function Header(props) {
                         <div className="header-top-right">
                             <ul>
                                 <li className="dropdown">
-                                    <a href="login.html" title="LOGIN" className="dropdown-toggle">
-                                        LOGIN
-                                    </a>
-                                </li>
-                                <li className="dropdown">
                                     <a
-                                        href="register.html"
+                                        href="/register"
                                         title="REGISTER"
                                         className="dropdown-toggle"
                                     >
-                                        REGISTER
+                                        Đăng ký
                                     </a>
                                 </li>
                                 <li className="dropdown">
                                     <a href="#" className="dropdown-toggle" data-toggle="dropdown">
-                                        USD <b className="caret" />
+                                        Đăng nhập <b className="caret" />
                                     </a>
                                     <ul className="dropdown-menu">
                                         <li className="active">
-                                            <a href="#">USD</a>
+                                            <a href="/login">Đăng nhập</a>
                                         </li>
                                         <li>
-                                            <a href="#">EUR</a>
+                                            <a href="/">Đăng xuất</a>
                                         </li>
                                     </ul>
                                 </li>

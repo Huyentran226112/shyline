@@ -1,49 +1,98 @@
-import React from 'react';
-import LayoutMaster from '../layouts/LayoutMaster';
+import React, { useState } from "react";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
+import * as Yup from "yup";
+import { Field, Form, Formik } from "formik";
+import LayoutMaster from "../layouts/LayoutMaster";
 
-function Login(props) {
-    return (
-        <LayoutMaster>
- <section className="body-page page-v1">
-  <div className="container">
-    <div className="content">
-      <h2 className="sky-h3">LOGIN ACCOUNT</h2>
-      <h5 className="p-v1">Lorem Ipsum is simply dummy text of the printing</h5>
-      <form>
-        <div className="form-group">
-          <input
-            type="text"
-            className="form-control"
-            name="name"
-            defaultValue=""
-            placeholder="User Name"
-          />
+const validationSchema = Yup.object().shape({
+  email: Yup.string().email("Email không hợp lệ").required("Email là bắt buộc"),
+  password: Yup.string().required("Mật khẩu là bắt buộc"),
+});
+
+const Login = () => {
+  const [formData, setFormData] = useState({
+    email: "",
+    password: "",
+    name: "",
+  });
+  const [msg,setMsg] = useState('');
+  const navigate = useNavigate();
+  const setUsername = (name) => {
+    setFormData((prevFormData) => ({
+      ...prevFormData,
+      name: name
+    }));
+  };
+
+  const handleSubmit = (values) => {
+    axios
+      .post("http://127.0.0.1:8000/api/auth/login-customer", values)
+      .then((response) => {
+        const { name } = response.data; // Lấy tên người dùng từ phản hồi API
+      setUsername(name); // Cập nhật giá trị của username trong state
+        alert("Đăng nhập thành công");
+        navigate("/"); // Chuyển hướng đến trang Dashboard sau khi đăng nhập thành công
+        console.log(response);
+      })
+      .catch((error) => {
+        setMsg('Email hoặc mật khẩu không đúng');
+        // Xử lý lỗi
+        console.log(error.response.data.error);
+      });
+  };
+  return (
+    <LayoutMaster>
+      <section className="body-page page-v1">
+        <div className="container">
+          <div className="content">
+            <h2 className="sky-h3">Đăng Nhập Tài Khoản</h2>
+            <h5 className="p-v1">
+              Chúc bạn có một trải nghiệm tốt tại Skyline
+            </h5>
+            <Formik
+              initialValues={formData}
+              validationSchema={validationSchema}
+              onSubmit={handleSubmit}
+            >
+              {({ errors, touched }) => (
+                <Form>
+                  <div className="form-group">
+                    <Field
+                      name="email"
+                      className="form-control"
+                      placeholder="Nhập email"
+                    />
+                    {errors.email && touched.email && <div>{errors.email}</div>}
+                  </div>
+                  <div className="form-group">
+                    <Field
+                      type="password"
+                      name="password"
+                      className="form-control"
+                    />
+                    {errors.password && touched.password && (
+                      <div>{errors.password}</div>
+                    )}
+                    <span
+                      className="fa fa-fw fa-eye field-icon toggle-password "
+                      data-toggle="#password-field"
+                    />
+                    {msg}
+                  </div>
+                  
+                  <button type="submit" className="btn btn-default">
+                    Đăng Nhập
+                  </button>
+                </Form>
+              )}
+            </Formik>
+            <p>Đăng ký &nbsp;- &nbsp; Quên mật khẩu</p>
+          </div>
         </div>
-        <div className="form-group">
-          <input
-            id="password-field"
-            type="password"
-            className="form-control"
-            name="password"
-            placeholder="Password"
-          />
-          <span
-            className="fa fa-fw fa-eye field-icon toggle-password "
-            data-toggle="#password-field"
-          />
-        </div>
-        <button type="submit" className="btn btn-default">
-          LOGIN
-        </button>
-      </form>
-      <p>I don’t have an account &nbsp;- &nbsp; Forgot Password</p>
-    </div>
-  </div>
-</section>
-
-
-        </LayoutMaster>
-    );
-}
+      </section>
+    </LayoutMaster>
+  );
+};
 
 export default Login;
