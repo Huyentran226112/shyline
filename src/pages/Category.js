@@ -14,8 +14,8 @@ function Category(props) {
     useEffect(() => {
         CategoryModel.getRooms(id)
             .then((res) => {
-                console.log(res.data.data);
-                setRooms(res.data.data);
+                console.log(res.data);
+                setRooms(res.data);
                 setLoading(false);
             })
             .catch((err) => {
