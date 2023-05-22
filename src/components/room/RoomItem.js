@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from 'react';
-
+import { Link } from 'react-router-dom';
 function RoomItem(props) {
-   const { room} = props;
+    // const { room} = props;
+    let {the_key,room} = props
     return (
         <div className="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-            <div className="room-item-1">
+            <div className="room-item-1"  key={the_key}>
+            <Link to={"/RoomDetail/" + room.id}>
                 <h2>
                     <a href="#">
                         {room.name}
@@ -15,6 +17,7 @@ function RoomItem(props) {
                         <img src={room.image} alt="#" />
                     </a>
                 </div>
+                 </Link>
                 <div className="content">
                     <p>
                     {room.description}
@@ -26,7 +29,7 @@ function RoomItem(props) {
                             {room.price_format} vnđ
                             </span> / Ngày
                     </span>
-                    <a href="/roomdetail" className="btn">
+                    <a href={"/RoomDetail/" + room.id}className="btn">
                         VIEW DETAILS
                     </a>
                 </div>
@@ -34,5 +37,4 @@ function RoomItem(props) {
         </div>
     );
 }
-
 export default RoomItem;

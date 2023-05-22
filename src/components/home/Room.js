@@ -7,7 +7,7 @@ function Room(props) {
         CategoryModel.getAll()
         .then((res) => {
             setCategories(res.data);
-          // console.log(res,44 );
+            // console.log(res.data);
         })
         .catch((err) => {   
           throw err;
@@ -31,7 +31,7 @@ function Room(props) {
                                 <div className="wrap-box">
                                     <div className="box-img">
                                         <img
-                                            src="images/Home-1/our-1.jpg"
+                                            src={category.image}
                                             className="img-responsive"
                                             alt="PLuxury Room"
                                             title="Luxury Room"
