@@ -21,20 +21,41 @@ function Header(props) {
                             </span>
                         </div>
                         <div className="header-top-right">
-                            <ul>
-                                <li className="dropdown">
-                                    <a href="/login" title="LOGIN" className="dropdown-toggle">
-                                        LOGIN
-                                    </a>
-                                </li>
+                            <ul>                             
                                 <li className="dropdown">
                                     <a
                                         href="/register"
                                         title="REGISTER"
                                         className="dropdown-toggle"
                                     >
-                                        REGISTER
+                                        Đăng ký
                                     </a>
+                                </li>
+                                <li className="dropdown">
+                                    <a href="#" className="dropdown-toggle" data-toggle="dropdown">
+                                        Đăng nhập <b className="caret" />
+                                    </a>
+                                    <ul className="dropdown-menu">
+                                        <li className="active">
+                                            <a href="/login">Đăng nhập</a>
+                                        </li>
+                                        <li>
+                                            <a href="/">Đăng xuất</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li className="dropdown">
+                                    <a href="#" className="dropdown-toggle" data-toggle="dropdown">
+                                        ENG <b className="caret" />
+                                    </a>
+                                    <ul className="dropdown-menu">
+                                        <li className="active">
+                                            <a href="#">ENG</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">JP</a>
+                                        </li>
+                                    </ul>
                                 </li>
                                 
                             </ul>
