@@ -6,11 +6,13 @@ import RoomItem from '../components/room/RoomItem';
 
 function Room(props) {
     const [rooms, setRooms] = useState([]);
+    const [loading, setLoading] = useState(true);
     useEffect(() => {
         RoomModel.getAll()
             .then((res) => {
-                // console.log(res.data.data);
+                console.log(res.data.data);
                 setRooms(res.data.data);
+                setLoading(false);
             })
             .catch((err) => {
                 throw err;
@@ -19,6 +21,9 @@ function Room(props) {
     return (
         <LayoutMaster>
             <PageBanner pageTitle="Rooms" pageSubTitle="All Rooms" />
+            {loading ? (
+            "Loading"
+          ) : (
             <section className="body-room-1 ">
                 <div className="container">
                     <div className="room-wrap-1">
@@ -32,6 +37,7 @@ function Room(props) {
                     </div>
                 </div>
             </section>
+          )}
         </LayoutMaster>
     );
 }

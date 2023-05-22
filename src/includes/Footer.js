@@ -11,7 +11,7 @@ function Footer(props) {
                                 <div className="icon-email">
                                     <a href="#" title="Email">
                                         <img
-                                            src="images/Home-1/footer-top-icon-l.png"
+                                            src="/images/Home-1/footer-top-icon-l.png"
                                             alt="Email"
                                             className="img-responsive"
                                         />
@@ -64,7 +64,7 @@ function Footer(props) {
                             <div className="col-xs-12 col-sm-12 col-md-3 col-lg-3">
                                 <div className="footer-logo text-center list-content">
                                     <a href="index.html" title="Skyline">
-                                        <img src="images/Home-1/sky-logo-footer.png" alt="Image" />
+                                        <img src="/images/Home-1/sky-logo-footer.png" alt="Image" />
                                     </a>
                                 </div>
                             </div>
@@ -170,22 +170,22 @@ function Footer(props) {
                                     <ul>
                                         <li>
                                             <a href="#" title="Paypal">
-                                                <img src="images/Home-1/Paypal.png" alt="Paypal" />
+                                                <img src="/images/Home-1/Paypal.png" alt="Paypal" />
                                             </a>
                                         </li>
                                         <li>
                                             <a href="#" title="Visa">
-                                                <img src="images/Home-1/Visa.png" alt="Visa" />
+                                                <img src="/images/Home-1/Visa.png" alt="Visa" />
                                             </a>
                                         </li>
                                         <li>
                                             <a href="#" title="Master">
-                                                <img src="images/Home-1/Master-card.png" alt="Master" />
+                                                <img src="/images/Home-1/Master-card.png" alt="Master" />
                                             </a>
                                         </li>
                                         <li>
                                             <a href="#" title="Discover">
-                                                <img src="images/Home-1/Discover.png" alt="Discover" />
+                                                <img src="/images/Home-1/Discover.png" alt="Discover" />
                                             </a>
                                         </li>
                                     </ul>
