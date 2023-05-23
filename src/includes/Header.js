@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 function Header(props) {
     return (
@@ -21,7 +22,7 @@ function Header(props) {
                             </span>
                         </div>
                         <div className="header-top-right">
-                            <ul>                             
+                            <ul>
                                 <li className="dropdown">
                                     <a
                                         href="/register"
@@ -57,7 +58,7 @@ function Header(props) {
                                         </li>
                                     </ul>
                                 </li>
-                                
+
                             </ul>
                         </div>
                     </div>
@@ -81,7 +82,7 @@ function Header(props) {
                                 </button>
                                 <a
                                     className="navbar-brand"
-                                    href="file:///E:/Xampp/htdocs/skyline/index.html"
+                                    href="/"
                                     title="Skyline"
                                 >
                                     <img src="/images/Home-1/sky-logo-header.png" alt="#" />
@@ -90,28 +91,27 @@ function Header(props) {
                             <div className="collapse navbar-collapse">
                                 <ul className="nav navbar-nav navbar-right">
                                     <li>
-                                        <a href="/" title="">
+                                    <Link to={"/"}>
                                             home
-                                        </a>
+                                        </Link>
                                     </li>
                                     <li>
-                                        <a href="/room" title="About">
-                                           Room
-                                        </a>
-                                    </li>
-                                
-                                    <li>
-                                        <a href="contact.html" title="Contact">
-                                            Contact
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
+                                        <Link to={"/room"}>
+                                            Room
+                                    </Link>
+                                </li>
+
+                                <li>
+                                <Link to={"/Contact"}>
+                                        Contact
+                                        </Link>
+                                </li>
+                            </ul>
                         </div>
-                    </nav>
                 </div>
-                {/* END / MENU-HEADER */}
-            </header>
+            </nav>
+        </div >
+            </header >
         </>
     );
 }

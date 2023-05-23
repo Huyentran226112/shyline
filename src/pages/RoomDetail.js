@@ -10,7 +10,7 @@ function RoomDetail(props) {
     const dispatch = useDispatch();
     const { id } = useParams();
     // const [qty, setQty] = useState(1);
-    const [loading, setLoading] = useState(true);
+    const [loading, setLoading] = useState(true);   
     const [room, setRoom] = useState([]);
     const [relateds, setRelateds] = useState([]);
     const carts = useSelector((state) => state.cart);
@@ -32,15 +32,6 @@ function RoomDetail(props) {
                 throw err;
             });
     }, []);
-    // const handleAddToCart = () => {
-    //     const cart = {
-    //         id: id,
-    //     };
-    //     RoomModel.addtocart(cart)
-    //         .then((res) => {
-    //             Navigate("/Checkout");
-    //         });
-    // };
     return (
         <LayoutMaster>
             <PageBanner pageTitle="Room detail" pageSubTitle="All Room detail" />
@@ -175,3 +166,5 @@ function RoomDetail(props) {
 }
 
 export default RoomDetail;
+
+

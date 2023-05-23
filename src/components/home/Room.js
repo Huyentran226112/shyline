@@ -1,19 +1,21 @@
 import React, { useEffect, useState } from 'react';
-import OwlCarousel from 'react-owl-carousel';
 import CategoryModel from '../../models/CategoryModel';
 import { Link } from 'react-router-dom';
+import Pagination from '../global/Pagination';
 function Room(props) {
     const [categories, setCategories] = useState([]);
+    const [page, setPage] = useState(1);
+    const [pageData, setPageData] = useState({});
     useEffect(() => {
         CategoryModel.getAll()
         .then((res) => {
             setCategories(res.data);
-            // console.log(res.data);
+            console.log(res );
         })
         .catch((err) => {   
           throw err;
         });
-    }, []);
+    }, [page]);
     return (
         <>
             <section className="rooms">
@@ -52,7 +54,6 @@ function Room(props) {
                         </div>
                     </div>
                 </div>
-                {/* /container */}
             </section>
         </>
     );

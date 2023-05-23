@@ -4,10 +4,10 @@ class RoomModel {
     constructor(){
         this.api_url = 'http://127.0.0.1:8000/api/rooms';
     }
-    getAll(){
+    getAll(page = 1){
         return new Promise( (resolve, reject) => {
             axios
-            .get(this.api_url)
+            .get(this.api_url+'?page='+page)
             .then(res => {
                 resolve(res);
             })
