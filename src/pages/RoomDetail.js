@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import LayoutMaster from '../layouts/LayoutMaster';
 import PageBanner from '../components/global/PageBanner';
 import RoomModel from '../models/RoomModel';
-import { Navigate, resolvePath, useNavigate, useParams } from "react-router-dom";
+import { Link, Navigate, resolvePath, useNavigate, useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import RoomItemRelated from '../components/room/RoomItemRelated';
 
@@ -34,7 +34,7 @@ function RoomDetail(props) {
     }, []);
     return (
         <LayoutMaster>
-            <PageBanner pageTitle="Room detail" pageSubTitle="All Room detail" />
+            <PageBanner pageTitle="Chi tiết phòng " pageSubTitle="Tận hưởng trải nghiệm sang trọng" />
             {loading ? (
                 "Loading.."
             ) : (
@@ -96,14 +96,14 @@ function RoomDetail(props) {
                                                 type="submit"
                                                 onClick={handleAddToCart}> Đặt phòng</button> */}
                                             <div  className="btn btn-room btn-product">
-                                                <a  href="/Checkout">
+                                            <Link to={"/Checkout"}>
                                                 Đặt phòng
-                                                </a>
+                                                </Link>
                                             </div>
                                             <div  className="btn btn-room btn-product">
-                                                <a  href="/room">
+                                            <Link to={"/room"}>
                                                 quay lại
-                                                </a>
+                                            </Link>
                                             </div>
                                         </div>
                                     </div>

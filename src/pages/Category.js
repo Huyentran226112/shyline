@@ -5,10 +5,8 @@ import RoomItem from '../components/room/RoomItem';
 import PageBanner from '../components/global/PageBanner';
 import { useParams } from 'react-router';
 import CategoryModel from '../models/CategoryModel';
-
 function Category(props) {
     const { id } = useParams();
-    
     const [rooms, setRooms] = useState([]);
     const [loading, setLoading] = useState(true);
     useEffect(() => {

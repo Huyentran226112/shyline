@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import CategoryModel from '../../models/CategoryModel';
 import { Link } from 'react-router-dom';
-import Pagination from '../global/Pagination';
 function Room(props) {
     const [categories, setCategories] = useState([]);
     const [page, setPage] = useState(1);
@@ -11,7 +10,7 @@ function Room(props) {
         .then((res) => {
             setCategories(res.data);
             console.log(res );
-        })
+        }) 
         .catch((err) => {   
           throw err;
         });
@@ -20,11 +19,10 @@ function Room(props) {
         <>
             <section className="rooms">
                 <div className="container">
-                    <h2 className="title-room">Our Rooms</h2>
+                    <h2 className="title-room">CÁC HẠNG PHÒNG </h2>
                     <div className="outline" />
                     <p className="rooms-p">
-                        When you host a party or family reunion, the special celebrations let
-                        you streng then bonds with
+                    Khi bạn tổ chức một bữa tiệc hoặc đoàn tụ gia đình, các lễ kỷ niệm đặc biệt sẽ giúp bạn củng cố và gắn kết với
                     </p>
                     <div className="wrap-rooms">
                    
@@ -49,7 +47,6 @@ function Room(props) {
                                     </div>
                                 </div>
                             </div>
-                 
                  ))}
                         </div>
                     </div>
