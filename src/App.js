@@ -1,6 +1,6 @@
 import 'owl.carousel/dist/assets/owl.carousel.css';
 import 'owl.carousel/dist/assets/owl.theme.default.css';
-import { Route, Routes } from "react-router-dom";
+import { Routes, Route, Link } from "react-router-dom";
 import Home from "./pages/Home";
 import Room from './pages/Room';
 import RoomDetail from './pages/RoomDetail';
