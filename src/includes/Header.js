@@ -45,20 +45,6 @@ function Header(props) {
                                         </li>
                                     </ul>
                                 </li>
-                                <li className="dropdown">
-                                    <a href="#" className="dropdown-toggle" data-toggle="dropdown">
-                                        ENG <b className="caret" />
-                                    </a>
-                                    <ul className="dropdown-menu">
-                                        <li className="active">
-                                            <a href="#">ENG</a>
-                                        </li>
-                                        <li>
-                                            <a href="#">JP</a>
-                                        </li>
-                                    </ul>
-                                </li>
-
                             </ul>
                         </div>
                     </div>
@@ -80,30 +66,26 @@ function Header(props) {
                                     <span className="icon-bar " />
                                     <span className="icon-bar " />
                                 </button>
-                                <a
-                                    className="navbar-brand"
-                                    href="/"
-                                    title="Skyline"
-                                >
+                                <Link to={"/"}>
                                     <img src="/images/Home-1/sky-logo-header.png" alt="#" />
-                                </a>
+                                    </Link>
                             </div>
                             <div className="collapse navbar-collapse">
                                 <ul className="nav navbar-nav navbar-right">
                                     <li>
-                                    <Link to={"/"}>
-                                            home
+                                    <Link to={"/"}> 
+                                          Trang chủ
                                         </Link>
                                     </li>
                                     <li>
                                         <Link to={"/room"}>
-                                            Room
+                                           Phòng 
                                     </Link>
                                 </li>
 
                                 <li>
                                 <Link to={"/Contact"}>
-                                        Contact
+                                      Liên hệ 
                                         </Link>
                                 </li>
                             </ul>

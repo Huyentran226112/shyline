@@ -14,24 +14,11 @@ function RoomItemRelated(props) {
                 </div>
                 <div className="text">
                     <h2>
-                        <a href="#">{room.name}</a>
+                        <a >{room.name}</a>
                     </h2>
-                    <ul>
-                        <li>
-                            <i className="fa fa-child" aria-hidden="true" /> Max: 2
-                            Person(s)
-                        </li>
-                        <li>
-                            <i className="fa fa-bed" aria-hidden="true" /> Bed:
-                            King-size or twin beds
-                        </li>
-                        <li>
-                            <i className="fa fa-eye" aria-hidden="true" /> View: Ocen
-                        </li>
-                    </ul>
-                    <a href={"/RoomDetail/" + room.id}className="btn">
-                        VIEW DETAIL
-                    </a>
+                    <Link to={"/RoomDetail/" + room.id} className="btn">
+                        CHI TIẾT PHÒNG 
+                    </Link>
                 </div>
             </div>
         </div>

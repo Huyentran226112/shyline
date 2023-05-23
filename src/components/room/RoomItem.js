@@ -29,9 +29,9 @@ function RoomItem(props) {
                             {room.price_format} vnđ
                             </span> / Ngày
                     </span>
-                    <a href={"/RoomDetail/" + room.id}className="btn">
-                        VIEW DETAILS
-                    </a>
+                    <Link to={"/RoomDetail/" + room.id} className="btn">
+                        CHI TIẾT PHÒNG 
+                    </Link>
                 </div>
             </div>
         </div>

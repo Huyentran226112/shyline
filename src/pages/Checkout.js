@@ -5,7 +5,7 @@ import PageBanner from '../components/global/PageBanner';
 function Checkout(props) {
     return (
         <LayoutMaster>
-            <PageBanner pageTitle="Checkout" pageSubTitle="All Checkout" />
+            <PageBanner pageTitle="Thủ tục thanh toán " pageSubTitle="Tận hưởng trải nghiệm sang trọng " />
             <section className="check-out">
                 <div className="container">
                     <p className="check-p">

@@ -36,7 +36,7 @@ function Slider(props) {
                         </div>
                     </div>
                 </OwlCarousel>
-                <div className="check-avail">
+                {/* <div className="check-avail">
                     <div className="container">
                         <div className="arrival date-title ">
                             <label>Arrival Date </label>
@@ -132,7 +132,7 @@ function Slider(props) {
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> */}
             </section>
         </>
     );

@@ -8,22 +8,16 @@ function About(props) {
                     <div className="row">
                         <div className="col-xs-12 col-sm-6 col-md-5 col-lg-5">
                             <div className="about-centent">
-                                <h2 className="about-title">About Us</h2>
+                                <h2 className="about-title">Về chúng tôi</h2>
                                 <div className="line" />
                                 <p className="about-p">
-                                    Contrary to popular belief, Lorem isn’t simply random text. It has
-                                    roots in a of classical Latin literature from 45 BC, making it
-                                    over 2000 years old. Avalon’s leading hotels with gracious island
-                                    hospitality, thoughtful amenities and distinctive
+                                    Tọa lạc ngay trung tâm thành phố Đông Hà, khách sạn 5 sao SKYLINE với 175 phòng nghỉ cao cấp và các phòng họp được trang bị hiện đại, cũng như rất nhiều dịch vụ spa, gym, karaoke đẳng cấp, luôn là một lựa chọn hoàn hảo dành cho du khách khi thăm các di tích lịch sử, danh lam thắng cảnh, mua sắm nổi tiếng của địa phương.
+
+                                    Tự hào là khách sạn cao cấp đầu tiên , chúng tôi rất hân hạnh được mang đến cho Quý khách những khoảnh khắc nghỉ ngơi, thư giãn thoải mái nhất.
                                 </p>
                                 <p className="about-p1">
-                                    Richard McClintock, a Latin professor at Hampden-Sydney College in
-                                    Virginia, looked up one of the more obscure Latin words,
-                                    consectetur, from a Lorem Ipsum passage ...
+                                    Đỗ xe và Wi-Fi luôn miễn phí, vì vậy quý khách có thể giữ liên lạc, đến và đi tùy ý. Nằm ở vị trí trung tâm tại Phước Mỹ của Da Nang, chỗ nghỉ này đặt quý khách ở gần các điểm thu hút và tùy chọn ăn uống thú vị. Hãy nhớ dành một chút thời gian để thăm thú Ngũ Hành Sơn cũng như Biển Mỹ Khê gần đó. Được xếp hạng 5 sao, chỗ nghỉ chất lượng cao này cho phép khách nghỉ sử dụng bể bơi trong nhà, mát-xa và bể bơi ngoài trời ngay trong khuôn viên.
                                 </p>
-                                <a href="#" className="read-more">
-                                    READ MORE{" "}
-                                </a>
                             </div>
                         </div>
                         <div className="col-xs-12 col-sm-6 col-md-7 col-lg-7 ">
