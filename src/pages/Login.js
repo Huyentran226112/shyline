@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import * as Yup from "yup";
 import { Field, Form, Formik } from "formik";
 import LayoutMaster from "../layouts/LayoutMaster";
@@ -29,11 +29,14 @@ const Login = () => {
     axios
       .post("http://127.0.0.1:8000/api/auth/login-customer", values)
       .then((response) => {
-        const { name } = response.data; // Lấy tên người dùng từ phản hồi API
-      setUsername(name); // Cập nhật giá trị của username trong state
+        console.log(response);
+        localStorage.setItem("customer", JSON.stringify(response.data.user));
+        localStorage.setItem("token", response.data.access_token);
+      //   const { name } = response.data; // Lấy tên người dùng từ phản hồi API
+      // setUsername(name); // Cập nhật giá trị của username trong state
         alert("Đăng nhập thành công");
         navigate("/"); // Chuyển hướng đến trang Dashboard sau khi đăng nhập thành công
-        console.log(response);
+      //   console.log(response);
       })
       .catch((error) => {
         setMsg('Email hoặc mật khẩu không đúng');
@@ -63,7 +66,7 @@ const Login = () => {
                       className="form-control"
                       placeholder="Nhập email"
                     />
-                    {errors.email && touched.email && <div>{errors.email}</div>}
+                    {errors.email && touched.email && <div className="form-error">{errors.email}</div>}
                   </div>
                   <div className="form-group">
                     <Field
@@ -72,13 +75,13 @@ const Login = () => {
                       className="form-control"
                     />
                     {errors.password && touched.password && (
-                      <div>{errors.password}</div>
+                      <div className="form-error">{errors.password}</div>
                     )}
                     <span
                       className="fa fa-fw fa-eye field-icon toggle-password "
                       data-toggle="#password-field"
                     />
-                    {msg}
+                    <div className="form-error">{msg}</div>
                   </div>
                   
                   <button type="submit" className="btn btn-default">
@@ -87,7 +90,7 @@ const Login = () => {
                 </Form>
               )}
             </Formik>
-            <p>Đăng ký &nbsp;- &nbsp; Quên mật khẩu</p>
+            <Link className="form-register" to={'/register'}>Đăng ký</Link>
           </div>
         </div>
       </section>

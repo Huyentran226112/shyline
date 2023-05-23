@@ -1,6 +1,10 @@
 import React from 'react';
+import MainMenu from '../components/header/MainMenu';
+import HeaderUser from '../components/header/HeaderUser';
 
 function Header(props) {
+    
+    
     return (
         <>
             <header className="header-sky">
@@ -20,46 +24,7 @@ function Header(props) {
                                 <i className="fa fa-phone" aria-hidden="true" /> 1-548-854-8898
                             </span>
                         </div>
-                        <div className="header-top-right">
-                            <ul>                             
-                                <li className="dropdown">
-                                    <a
-                                        href="/register"
-                                        title="REGISTER"
-                                        className="dropdown-toggle"
-                                    >
-                                        Đăng ký
-                                    </a>
-                                </li>
-                                <li className="dropdown">
-                                    <a href="#" className="dropdown-toggle" data-toggle="dropdown">
-                                        Đăng nhập <b className="caret" />
-                                    </a>
-                                    <ul className="dropdown-menu">
-                                        <li className="active">
-                                            <a href="/login">Đăng nhập</a>
-                                        </li>
-                                        <li>
-                                            <a href="/">Đăng xuất</a>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li className="dropdown">
-                                    <a href="#" className="dropdown-toggle" data-toggle="dropdown">
-                                        ENG <b className="caret" />
-                                    </a>
-                                    <ul className="dropdown-menu">
-                                        <li className="active">
-                                            <a href="#">ENG</a>
-                                        </li>
-                                        <li>
-                                            <a href="#">JP</a>
-                                        </li>
-                                    </ul>
-                                </li>
-                                
-                            </ul>
-                        </div>
+                        <HeaderUser/>
                     </div>
                     {/* END/HEADER-TOP */}
                 </div>
@@ -88,24 +53,7 @@ function Header(props) {
                                 </a>
                             </div>
                             <div className="collapse navbar-collapse">
-                                <ul className="nav navbar-nav navbar-right">
-                                    <li>
-                                        <a href="/" title="">
-                                            home
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="/room" title="About">
-                                           Room
-                                        </a>
-                                    </li>
-                                
-                                    <li>
-                                        <a href="contact.html" title="Contact">
-                                            Contact
-                                        </a>
-                                    </li>
-                                </ul>
+                               <MainMenu/>
                             </div>
                         </div>
                     </nav>

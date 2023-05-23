@@ -8,23 +8,23 @@ import { Field, Form, Formik } from "formik";
 
 const rules = Yup.object().shape({
   name: Yup.string()
-    .required("Truong yeu cau")
+    .required("Vui lòng nhập tên")
     .min(3, "Toi thieu 3 ky tu")
     .max(255, "Toi da 255"),
   email: Yup.string()
-    .required("Truong yeu cau")
+    .required("Vui lòng nhập email")
     .min(3, "Toi thieu 4 ky tu")
     .max(255, "Toi da 255"),
   address: Yup.string()
-  .required("Truong yeu cau")
+  .required("Vui lòng nhập địa chỉ")
   .min(3, "Toi thieu 4 ky tu")
   .max(255, "Toi da 255"),
   phone: Yup.string()
-  .required("Truong yeu cau")
-  .min(3, "Toi thieu 4 ky tu")
-  .max(255, "Toi da 255"),
+  .required("Vui lòng nhập sđt")
+  .min(3, "Toi thieu 9 ky tu")
+  .max(255, "Toi da 10"),
   password: Yup.string()
-  .required("Truong yeu cau")
+  .required("Vui lòng nhập password")
   .min(3, "Toi thieu 4 ky tu")
   .max(255, "Toi da 255"),
 });
@@ -76,27 +76,27 @@ const RegisterForm = () => {
               <div className="form-group">
                 <Field name="name" className="form-control" placeholder="Nhập tên"/>
               </div>
-              {errors.name && touched.name ? <div>{errors.name}</div> : null}
+              {errors.name && touched.name ? <div className="form-error">{errors.name}</div> : null}
               <div className="form-group">
               <Field type="email" name="email" className="form-control" placeholder="Nhập email"/>
               </div>
-              {errors.email && touched.email ? <div>{errors.email}</div> : null}
+              {errors.email && touched.email ? <div className="form-error">{errors.email}</div> : null}
               <div className="form-group">
               <Field type="text" name="address" className="form-control" placeholder="Nhập địa chỉ"/>
               </div>
-              {errors.address && touched.address ? <div>{errors.address}</div> : null}
+              {errors.address && touched.address ? <div className="form-error">{errors.address}</div> : null}
               <div className="form-group">
               <Field type="text" name="phone" className="form-control" placeholder="Nhập sđt"/>
               </div>
-              {errors.phone && touched.phone ? <div>{errors.phone}</div> : null}
+              {errors.phone && touched.phone ? <div className="form-error">{errors.phone}</div> : null}
               <div className="form-group">
               <Field type="password" name="password" className="form-control" placeholder="Nhập mật khẩu"/>
               </div>
-              {errors.password && touched.password ? <div>{errors.password}</div> : null}
+              {errors.password && touched.password ? <div className="form-error">{errors.password}</div> : null}
               <div className="form-group">
               <Field type="password" name="password" className="form-control" placeholder="Nhập lại mật khẩu"/>
               </div>
-              {errors.password && touched.password ? <div>{errors.password}</div> : null}
+              {errors.password && touched.password ? <div className="form-error">{errors.password}</div> : null}
               <button type="submit" className="btn btn-default">
                 ĐĂNG KÝ
               </button>
