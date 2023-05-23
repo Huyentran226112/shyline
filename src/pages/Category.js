@@ -1,31 +1,28 @@
 import React, { useEffect, useState } from 'react';
 import LayoutMaster from '../layouts/LayoutMaster';
-import PageBanner from '../components/global/PageBanner';
-import RoomModel from '../models/RoomModel';
+
 import RoomItem from '../components/room/RoomItem';
-import Pagination from '../components/global/Pagination';
-
-
-function Room(props) {
+import PageBanner from '../components/global/PageBanner';
+import { useParams } from 'react-router';
+import CategoryModel from '../models/CategoryModel';
+function Category(props) {
+    const { id } = useParams();
     const [rooms, setRooms] = useState([]);
     const [loading, setLoading] = useState(true);
-    const [page, setPage] = useState(1);
-    const [pageData, setPageData] = useState({});
     useEffect(() => {
-        RoomModel.getAll(page)
+        CategoryModel.getRooms(id)
             .then((res) => {
-                console.log(res);
-                setRooms(res.data.data);
-                setPageData(res.data.meta)
+                console.log(res.data);
+                setRooms(res.data);
                 setLoading(false);
             })
             .catch((err) => {
                 throw err;
             });
-    }, [page]);
+    }, []);
     return (
         <LayoutMaster>
-            <PageBanner pageTitle="Căn Phòng" pageSubTitle="Tận hưởng trải nghiệm sang trọng " />
+            <PageBanner pageTitle="Rooms" pageSubTitle="All Rooms" />
             {loading ? (
             "Loading"
           ) : (
@@ -40,13 +37,12 @@ function Room(props) {
                             }
                         </div>
                     </div>
-                    <Pagination pageData={pageData} setPage={setPage}/>
-
                 </div>
             </section>
           )}
         </LayoutMaster>
     );
+    
 }
 
-export default Room;
+export default Category;

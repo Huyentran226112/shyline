@@ -1,27 +1,28 @@
 import React, { useEffect, useState } from 'react';
-import OwlCarousel from 'react-owl-carousel';
 import CategoryModel from '../../models/CategoryModel';
+import { Link } from 'react-router-dom';
 function Room(props) {
     const [categories, setCategories] = useState([]);
+    const [page, setPage] = useState(1);
+    const [pageData, setPageData] = useState({});
     useEffect(() => {
         CategoryModel.getAll()
         .then((res) => {
             setCategories(res.data);
-            // console.log(res.data);
-        })
+            console.log(res );
+        }) 
         .catch((err) => {   
           throw err;
         });
-    }, []);
+    }, [page]);
     return (
         <>
             <section className="rooms">
                 <div className="container">
-                    <h2 className="title-room">Our Rooms</h2>
+                    <h2 className="title-room">CÁC HẠNG PHÒNG </h2>
                     <div className="outline" />
                     <p className="rooms-p">
-                        When you host a party or family reunion, the special celebrations let
-                        you streng then bonds with
+                    Khi bạn tổ chức một bữa tiệc hoặc đoàn tụ gia đình, các lễ kỷ niệm đặc biệt sẽ giúp bạn củng cố và gắn kết với
                     </p>
                     <div className="wrap-rooms">
                    
@@ -29,25 +30,27 @@ function Room(props) {
                         {categories.map((category, key) => (
                             <div className="col-lg-4 col-md-4 col-sm-6 col-xs-6 ">
                                 <div className="wrap-box">
-                                    <div className="box-img">
-                                        <img
-                                            src={category.image}
-                                            className="img-responsive"
-                                            alt="PLuxury Room"
-                                            title="Luxury Room"
-                                        />
-                                    </div>
+                                    <Link to={"/category/" + category.id}>
+                                        <div className="box-img">
+                                            <img
+                                                src={category.image}
+                                                className="img-responsive"
+                                                alt="PLuxury Room"
+                                                title="Luxury Room"
+                                            />
+                                        </div>
+                                    </Link>
                                     <div className="rooms-content">
-                                        <h4 className="sky-h4">{category.name}</h4>
+                                        <Link to={"/category/" + category.id}>
+                                            <h4 className="sky-h4">{category.name}</h4>
+                                        </Link>
                                     </div>
                                 </div>
                             </div>
-                 
                  ))}
                         </div>
                     </div>
                 </div>
-                {/* /container */}
             </section>
         </>
     );

@@ -1,6 +1,10 @@
 import React from 'react';
+
 import MainMenu from '../components/header/MainMenu';
 import HeaderUser from '../components/header/HeaderUser';
+
+import { Link } from 'react-router-dom';
+
 
 function Header(props) {
     
@@ -24,7 +28,36 @@ function Header(props) {
                                 <i className="fa fa-phone" aria-hidden="true" /> 1-548-854-8898
                             </span>
                         </div>
+
                         <HeaderUser/>
+
+                        <div className="header-top-right">
+                            <ul>
+                                <li className="dropdown">
+                                    <a
+                                        href="/register"
+                                        title="REGISTER"
+                                        className="dropdown-toggle"
+                                    >
+                                        Đăng ký
+                                    </a>
+                                </li>
+                                <li className="dropdown">
+                                    <a href="#" className="dropdown-toggle" data-toggle="dropdown">
+                                        Đăng nhập <b className="caret" />
+                                    </a>
+                                    <ul className="dropdown-menu">
+                                        <li className="active">
+                                            <a href="/login">Đăng nhập</a>
+                                        </li>
+                                        <li>
+                                            <a href="/">Đăng xuất</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+
                     </div>
                     {/* END/HEADER-TOP */}
                 </div>
@@ -44,22 +77,39 @@ function Header(props) {
                                     <span className="icon-bar " />
                                     <span className="icon-bar " />
                                 </button>
-                                <a
-                                    className="navbar-brand"
-                                    href="file:///E:/Xampp/htdocs/skyline/index.html"
-                                    title="Skyline"
-                                >
+                                <Link to={"/"}>
                                     <img src="/images/Home-1/sky-logo-header.png" alt="#" />
-                                </a>
+                                    </Link>
                             </div>
                             <div className="collapse navbar-collapse">
+
                                <MainMenu/>
                             </div>
+
+                                <ul className="nav navbar-nav navbar-right">
+                                    <li>
+                                    <Link to={"/"}> 
+                                          Trang chủ
+                                        </Link>
+                                    </li>
+                                    <li>
+                                        <Link to={"/room"}>
+                                           Phòng 
+                                    </Link>
+                                </li>
+
+                                <li>
+                                <Link to={"/Contact"}>
+                                      Liên hệ 
+                                        </Link>
+                                </li>
+                            </ul>
+
                         </div>
-                    </nav>
                 </div>
-                {/* END / MENU-HEADER */}
-            </header>
+            </nav>
+        </div >
+            </header >
         </>
     );
 }

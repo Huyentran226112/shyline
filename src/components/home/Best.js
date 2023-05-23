@@ -15,7 +15,7 @@ function Best(props) {
                                         alt="Image"
                                     />
                                 </div>
-                                <h6 className="sky-h6">Master Bedrooms</h6>
+                                <h6 className="sky-h6">PHÒNG NGỦ CHÍNH</h6>
                             </div>
                         </div>
                         <div className="col-xs-6 col-sm-3 col-md-3 col-lg-3">

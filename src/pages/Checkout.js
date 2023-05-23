@@ -7,6 +7,7 @@ import { Form, Formik } from "formik";
 import CustomerModel from "../models/CustomerModel";
 
 function Checkout(props) {
+
   const cart = useSelector((state) => state.cart);
   const room = cart.room ?? {};
 
