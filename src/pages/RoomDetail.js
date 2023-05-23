@@ -52,7 +52,7 @@ function RoomDetail(props) {
   // };
   return (
     <LayoutMaster>
-      <PageBanner pageTitle="Room detail" pageSubTitle="All Room detail" />
+      <PageBanner pageTitle="Chi tiết phòng" pageSubTitle="Tận hưởng trải nghiệm sang trọng" />
       {loading ? (
         "Loading.."
       ) : (
