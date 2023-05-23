@@ -18,4 +18,16 @@
 
 
 }
-
+.wellcome-text:hover{
+    background-color: transparent !important;
+}
+.wellcome-text span {
+    color: white;
+    margin-right: 20px;
+}
+.form-error {
+    color: red;
+}
+.form-register {
+    color: #fff;
+}

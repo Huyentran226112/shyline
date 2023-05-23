@@ -1,7 +1,14 @@
 import React from 'react';
+
+import MainMenu from '../components/header/MainMenu';
+import HeaderUser from '../components/header/HeaderUser';
+
 import { Link } from 'react-router-dom';
 
+
 function Header(props) {
+    
+    
     return (
         <>
             <header className="header-sky">
@@ -21,6 +28,9 @@ function Header(props) {
                                 <i className="fa fa-phone" aria-hidden="true" /> 1-548-854-8898
                             </span>
                         </div>
+
+                        <HeaderUser/>
+
                         <div className="header-top-right">
                             <ul>
                                 <li className="dropdown">
@@ -47,6 +57,7 @@ function Header(props) {
                                 </li>
                             </ul>
                         </div>
+
                     </div>
                     {/* END/HEADER-TOP */}
                 </div>
@@ -71,6 +82,10 @@ function Header(props) {
                                     </Link>
                             </div>
                             <div className="collapse navbar-collapse">
+
+                               <MainMenu/>
+                            </div>
+
                                 <ul className="nav navbar-nav navbar-right">
                                     <li>
                                     <Link to={"/"}> 
@@ -89,6 +104,7 @@ function Header(props) {
                                         </Link>
                                 </li>
                             </ul>
+
                         </div>
                 </div>
             </nav>
