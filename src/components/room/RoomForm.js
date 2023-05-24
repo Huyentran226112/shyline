@@ -91,7 +91,7 @@ function RoomForm(props) {
         </div>
       </div>
 
-      <button className="btn btn-room btn-product" onClick={handleClick}>Đặt phòng</button>
+      <button className="btn btn-room btn-product" onClick={handleClick}>Kiểm tra phòng </button>
       <Link to={'/room'} className="btn btn-room btn-product">Quay lại</Link>
     </div>
   );

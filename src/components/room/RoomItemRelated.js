@@ -15,9 +15,9 @@ function RoomItemRelated(props) {
                     <h2>
                         <a >{room.name}</a>
                     </h2>
-                    <a href={"/RoomDetail/" + room.id}className="btn">
+                    <Link to={"/RoomDetail/" + room.id} className="btn">
                         CHI TIẾT PHÒNG 
-                    </a>
+                        </Link>
                 </div>
             </div>
         </div>
