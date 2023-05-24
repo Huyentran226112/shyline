@@ -1,9 +1,10 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Swal from 'sweetalert2';
 import CustomerModel from "../../models/CustomerModel";
 
 function HeaderUser(props) {
+  const navigate = useNavigate();
   let customer = localStorage.getItem("customer");
   customer = JSON.parse(customer);
   const handleLogout = () => {
@@ -22,7 +23,7 @@ function HeaderUser(props) {
            
 
           // Chuyển hướng đến trang đăng nhập
-          window.location.href = '/login';
+          navigate("/login");
         });
       })
       .catch((error) => {

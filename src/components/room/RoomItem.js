@@ -20,7 +20,7 @@ function RoomItem(props) {
                  </Link>
                 <div className="content">
                     <p>
-                    {room.description}
+                    {/* {room.description} */}
                     </p>
                 </div>
                 <div className="bottom">
