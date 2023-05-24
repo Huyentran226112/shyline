@@ -10,7 +10,6 @@ import {
   useNavigate,
   useParams,
 } from "react-router-dom";
-
 import { useDispatch, useSelector } from "react-redux";
 import RoomItemRelated from "../components/room/RoomItemRelated";
 import RoomForm from "../components/room/RoomForm";
@@ -18,13 +17,11 @@ import RoomForm from "../components/room/RoomForm";
 function RoomDetail(props) {
   const dispatch = useDispatch();
   const { id } = useParams();
-  // const [qty, setQty] = useState(1);
   const [loading, setLoading] = useState(true);
   const [room, setRoom] = useState([]);
   const [relateds, setRelateds] = useState([]);
   const carts = useSelector((state) => state.cart);
-  const formattedPrice =
-    room?.price?.toLocaleString("vi-VN") || "Price not available";
+  const formattedPrice = room?.price?.toLocaleString("vi-VN") || "Price not available";
   useEffect(() => {
     RoomModel.find(id)
       .then((res) => {
@@ -41,16 +38,7 @@ function RoomDetail(props) {
       .catch((err) => {
         throw err;
       });
-  }, []);
-  // const handleAddToCart = () => {
-  //     const cart = {
-  //         id: id,
-  //     };
-  //     RoomModel.addtocart(cart)
-  //         .then((res) => {
-  //             Navigate("/Checkout");
-  //         });
-  // };
+  }, [id]);
   return (
     <LayoutMaster>
       <PageBanner pageTitle="Chi tiết phòng" pageSubTitle="Tận hưởng trải nghiệm sang trọng" />
@@ -90,8 +78,8 @@ function RoomDetail(props) {
                       />
                       <h1 className="amout">SKYLINE</h1>
                     </div>
-					<RoomForm room={room}/>
-                    
+                    <RoomForm room={room} />
+
                   </div>
                 </div>
               </div>
@@ -122,29 +110,27 @@ function RoomDetail(props) {
                       <div className="product-detail_amenities">
                         <p>{room.description}</p>
                       </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        {/* END / TAB */}
-                        {/* ANOTHER ACCOMMODATION */}
-                        <div className="product-detail">
-                            <h2 className="product-detail_title">Another accommodations</h2>
-                            <div className="product-detail_content">
-                                <div className="row">
-                                    {/* ITEM */}
-                                    {
-                                        relateds.map((related, key) => (
-                                            <RoomItemRelated room={related} />
-                                        ))}
-                                </div>
-                            </div>
-                        </div>
-                        {/* END / ANOTHER ACCOMMODATION */}
-                 
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
-        
+            {/* END / TAB */}
+            {/* ANOTHER ACCOMMODATION */}
+            <div className="product-detail">
+              <h2 className="product-detail_title">CÁC PHÒNG NGHỈ KHÁC </h2>
+              <div className="product-detail_content">
+                <div className="row">
+                  {/* ITEM */}
+                  {
+                    relateds.map((related, key) => (
+                      <RoomItemRelated room={related} />
+                    ))}
+                </div>
+              </div>
+            </div>
+            {/* END / ANOTHER ACCOMMODATION */}
+          </div>
         </section>
       )}
     </LayoutMaster>
