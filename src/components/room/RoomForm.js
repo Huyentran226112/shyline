@@ -3,7 +3,7 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { useDispatch, useSelector } from "react-redux";
 import { SET_CART } from '../../redux/action';
-import { Navigate, useNavigate } from "react-router-dom";
+import { Link, Navigate, useNavigate } from "react-router-dom";
 
 function RoomForm(props) {
   const dispatch = useDispatch();
@@ -87,7 +87,9 @@ function RoomForm(props) {
         </div>
       </div>
       <button className="btn btn-room btn-product" onClick={handClick}>Đặt phòng</button>
-      <a className="btn btn-room btn-product">Quay lại</a>
+      <Link to={"/Room"} className="btn btn-room btn-product">
+      Quay lại
+      </Link>
     </div>
   );
 }
