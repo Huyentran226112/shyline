@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { SET_CART } from '../../redux/action';
 import { Link, Navigate, useNavigate } from "react-router-dom";
 
@@ -13,41 +13,45 @@ function RoomForm(props) {
     checkin: "",
     checkout: "",
     total: 0,
-    room_id:0,
-    room:{}
+    room_id: 0,
+    room: {}
   });
   const [startDate, setStartDate] = useState(new Date());
   const [endDate, setEndDate] = useState(new Date());
- 
 
-
-  const handClick = (event) => {
+  const handleClick = (event) => {
     var soNgay = tinhSoNgay(startDate, endDate);
     let total = soNgay * room.price;
     let cart = {
-      checkin:startDate,
-      checkout:endDate,
-      total:total,
-      room:room,
-      room_id:room.id,
-      soNgay:soNgay
+      checkin: startDate,
+      checkout: endDate,
+      total: total,
+      room: room,
+      room_id: room.id,
+      soNgay: soNgay
     }
-    localStorage.setItem('cart', JSON.stringify(cart));
-    dispatch({ type: SET_CART, payload: cart });
-    navigate("/checkout");
+    const customer = localStorage.getItem("customer");
+    if (customer) {
+      localStorage.setItem('cart', JSON.stringify(cart));
+      dispatch({ type: SET_CART, payload: cart });
+      navigate("/checkout");
+    } else {
+      alert("Bạn cần đăng nhập để đặt phòng.");
+      navigate("/login");
+    }
   }
 
   const tinhSoNgay = (truoc, sau) => {
     // Chuyển đổi chuỗi ngày thành đối tượng Date
     var checkin = new Date(truoc);
     var checkout = new Date(sau);
-  
+
     // Tính số mili giây giữa hai ngày
     var soMiligiay = checkout - checkin;
-  
+
     // Chuyển đổi số mili giây thành số ngày
     var total = Math.floor(soMiligiay / (1000 * 60 * 60 * 24));
-  
+
     return total;
   }
 
@@ -86,10 +90,9 @@ function RoomForm(props) {
           </div>
         </div>
       </div>
-      <button className="btn btn-room btn-product" onClick={handClick}>Đặt phòng</button>
-      <Link to={"/Room"} className="btn btn-room btn-product">
-      Quay lại
-      </Link>
+
+      <button className="btn btn-room btn-product" onClick={handleClick}>Đặt phòng</button>
+      <Link to={'/room'} className="btn btn-room btn-product">Quay lại</Link>
     </div>
   );
 }

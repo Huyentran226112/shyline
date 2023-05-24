@@ -2,12 +2,14 @@ import React from "react";
 import LayoutMaster from "../layouts/LayoutMaster";
 import PageBanner from "../components/global/PageBanner";
 import { useSelector } from "react-redux";
+import Swal from 'sweetalert2';
 import { NumericFormat } from "react-number-format";
-import { Form, Formik } from "formik";
-import CustomerModel from "../models/CustomerModel";
+import { Form, Formik, Field } from "formik";
+import { Link, Navigate, useNavigate } from "react-router-dom";
+import axios from "axios";
 
 function Checkout(props) {
-
+  const navigate = useNavigate();
   const cart = useSelector((state) => state.cart);
   const room = cart.room ?? {};
 
@@ -15,28 +17,64 @@ function Checkout(props) {
   if (customer) {
     customer = JSON.parse(customer);
   } else {
-    customer = new CustomerModel({
+    customer = {
       name: "",
       phone: "",
       email: "",
       address: "",
-    });
+    };
   }
 
-  console.log(cart);
+  const handleSubmit = (values) => {
+    const formattedCheckin = new Date(cart.checkin).toISOString().split("T")[0];
+    const formattedCheckout = new Date(cart.checkout).toISOString().split("T")[0];
+    const orderData = {
+      price: room.price,
+      total: cart.total,
+      checkin: formattedCheckin,
+      checkout: formattedCheckout,
+      room_id: cart.room_id,
+      customer_id: customer.id,
+    };
+
+    axios
+      .post("http://127.0.0.1:8000/api/orders", orderData)
+      .then((response) => {
+        // Xử lý thành công khi đặt hàng
+        Swal.fire({
+          icon: 'success',
+          title: 'Bạn đã đặt phòng thành công',
+          showConfirmButton: false,
+          timer: 1500,
+        }).then(() => {          
+          // Chuyển hướng đến trang đăng nhập
+          navigate("/room");
+        });
+      })
+      .catch((error) => {
+        // Xử lý khi có lỗi đăng xuất
+        Swal.fire({
+          icon: 'error',
+          title: 'Đặt phòng thất bại',
+        });
+      });
+  };
+
   return (
     <LayoutMaster>
-      <PageBanner pageTitle="Thủ tục thanh toán" pageSubTitle="Tận hưởng trải nghiệm sang trọng" />
+      <PageBanner
+        pageTitle="Thủ tục thanh toán"
+        pageSubTitle="Tận hưởng trải nghiệm sang trọng"
+      />
       <section className="check-out">
         <div className="container">
           <p className="check-p">
             Returning customer?{" "}
             <a href="#" title="">
-              {" "}
               Click here to login
             </a>
           </p>
-          <Formik initialValues={{}} onSubmit={(values) => console.log(values)}>
+          <Formik initialValues={{}} onSubmit={handleSubmit}>
             <Form className="row">
               <div className="col-xs-12 col-sm-12 col-md-6 col-lg-6">
                 <div className="check-left ">
@@ -48,8 +86,9 @@ function Checkout(props) {
                         <label>
                           Tên <span>*</span>
                         </label>
-                        <input
+                        <Field
                           type="text"
+                          name="name"
                           className="form-control"
                           defaultValue={customer.name}
                         />
@@ -60,8 +99,9 @@ function Checkout(props) {
                         <label>
                           Phone <span>*</span>
                         </label>
-                        <input
+                        <Field
                           type="text"
+                          name="phone"
                           className="form-control"
                           defaultValue={customer.phone}
                         />
@@ -70,8 +110,9 @@ function Checkout(props) {
                   </div>
                   <div className="form-group">
                     <label>Email</label>
-                    <input
+                    <Field
                       type="text"
+                      name="email"
                       className="form-control"
                       defaultValue={customer.email}
                     />
@@ -80,18 +121,18 @@ function Checkout(props) {
                     <label>
                       Địa chỉ <span>*</span>
                     </label>
-                    <input
+                    <Field
                       type="text"
+                      name="address"
                       className="form-control"
                       defaultValue={customer.address}
                       placeholder="Street Address"
                     />
                   </div>
                 </div>
-                {/* item-right */}
               </div>
               <div className="col-xs-12 col-sm-12 col-md-6 col-lg-5 col-lg-offset-1">
-                <div className="check-right ">
+                <div className="check-right">
                   <h2 className="text-uppercase">Chi tiết thanh toán</h2>
                   <div className="checkout_cart">
                     <div className="cart-item">
@@ -104,7 +145,6 @@ function Checkout(props) {
                         <a href="#">{room.name}</a>
                       </div>
                     </div>
-                    {/* END / ITEM */}
                   </div>
                   <div className="checkout-cartinfo">
                     <p>
@@ -128,17 +168,12 @@ function Checkout(props) {
                     </p>
                   </div>
                   <button type="submit" className="checkout-btn btn">
-                    {" "}
-                    Đặt phòng{" "}
+                    Đặt phòng
                   </button>
                 </div>
               </div>
-
-              {/* /row */}
             </Form>
           </Formik>
-
-          {/* /container */}
         </div>
       </section>
     </LayoutMaster>

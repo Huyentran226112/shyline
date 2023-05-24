@@ -3,7 +3,13 @@ import React, { useEffect, useState } from "react";
 import LayoutMaster from "../layouts/LayoutMaster";
 import PageBanner from "../components/global/PageBanner";
 import RoomModel from "../models/RoomModel";
-import {useParams} from "react-router-dom";
+
+import {
+  Navigate,
+  resolvePath,
+  useNavigate,
+  useParams,
+} from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import RoomItemRelated from "../components/room/RoomItemRelated";
 import RoomForm from "../components/room/RoomForm";
