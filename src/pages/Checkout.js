@@ -7,13 +7,14 @@ import { NumericFormat } from "react-number-format";
 import { Form, Formik, Field } from "formik";
 import { Link, Navigate, useNavigate } from "react-router-dom";
 import axios from "axios";
+import CustomerModel from "../models/CustomerModel";
 
 function Checkout(props) {
   const navigate = useNavigate();
   const cart = useSelector((state) => state.cart);
   const room = cart.room ?? {};
 
-  let customer = localStorage.getItem("customer");
+  let customer = CustomerModel.getCookie('customer');
   if (customer) {
     customer = JSON.parse(customer);
   } else {

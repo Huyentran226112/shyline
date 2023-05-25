@@ -4,6 +4,7 @@ import "react-datepicker/dist/react-datepicker.css";
 import { useDispatch } from "react-redux";
 import { SET_CART } from '../../redux/action';
 import { Link, Navigate, useNavigate } from "react-router-dom";
+import CustomerModel from "../../models/CustomerModel";
 
 function RoomForm(props) {
   const dispatch = useDispatch();
@@ -30,7 +31,10 @@ function RoomForm(props) {
       room_id: room.id,
       soNgay: soNgay
     }
-    const customer = localStorage.getItem("customer");
+
+    let customer = CustomerModel.getCookie('customer');
+  customer = customer ? JSON.parse(customer) : '';
+
     if (customer) {
       localStorage.setItem('cart', JSON.stringify(cart));
       dispatch({ type: SET_CART, payload: cart });
