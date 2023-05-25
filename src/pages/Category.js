@@ -9,6 +9,7 @@ function Category(props) {
     const { id } = useParams();
     const [rooms, setRooms] = useState([]);
     const [loading, setLoading] = useState(true);
+    
     let {the_key,room} = props
     useEffect(() => {
         CategoryModel.getRooms(id)
@@ -23,7 +24,7 @@ function Category(props) {
     }, []);
     return (
         <LayoutMaster>
-            <PageBanner pageTitle="Tất cả phòng" pageSubTitle="All Rooms"  /> 
+            <PageBanner pageTitle="Hạng phòng" pageSubTitle="Tận hưởng trải nghiệm sang trọng"  /> 
             {loading ? (
             "Loading"
           ) : (

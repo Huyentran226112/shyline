@@ -25,7 +25,7 @@ function Room(props) {
     }, [page]);
     return (
         <LayoutMaster>
-            <PageBanner pageTitle="Căn Phòng" pageSubTitle="Tận hưởng trải nghiệm sang trọng " />
+            <PageBanner pageTitle="Tất cả phòng" pageSubTitle="Tận hưởng trải nghiệm sang trọng " />
             {loading ? (
             "Loading"
           ) : (
