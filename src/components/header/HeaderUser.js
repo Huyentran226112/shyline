@@ -5,14 +5,13 @@ import CustomerModel from "../../models/CustomerModel";
 
 function HeaderUser(props) {
   const navigate = useNavigate();
-  let customer = localStorage.getItem("customer");
-  customer = JSON.parse(customer);
+  let customer = CustomerModel.getCookie('customer');
+  customer = customer ? JSON.parse(customer) : '';
   const handleLogout = () => {
     // Gọi API đăng xuất
     CustomerModel.logout()
       .then((response) => {
-        console.log(response);
-        localStorage.removeItem('customer');
+        CustomerModel.deleteCookie('customer');
         // Xử lý khi đăng xuất thành công
         Swal.fire({
           icon: 'success',

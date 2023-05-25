@@ -68,7 +68,7 @@ function RoomForm(props) {
               <label>Giá: {room.price_format}VND /days</label>
             </div>
             <div className="check_availability-field">
-              <label>Ngày đặt</label>
+              <label>Ngày nhận</label>
               <div className="input-group " >
                 <DatePicker
                   className="form-control wrap-box"

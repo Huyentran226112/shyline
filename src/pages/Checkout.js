@@ -68,12 +68,6 @@ function Checkout(props) {
       />
       <section className="check-out">
         <div className="container">
-          <p className="check-p">
-            Returning customer?{" "}
-            <a href="#" title="">
-              Click here to login
-            </a>
-          </p>
           <Formik initialValues={{}} onSubmit={handleSubmit}>
             <Form className="row">
               <div className="col-xs-12 col-sm-12 col-md-6 col-lg-6">

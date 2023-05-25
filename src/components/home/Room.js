@@ -22,7 +22,7 @@ function Room(props) {
                     <h2 className="title-room">CÁC HẠNG PHÒNG </h2>
                     <div className="outline" />
                     <p className="rooms-p">
-                    Khi bạn tổ chức một bữa tiệc hoặc đoàn tụ gia đình, các lễ kỷ niệm đặc biệt sẽ giúp bạn củng cố và gắn kết với
+                    Khi bạn tổ chức một bữa tiệc hoặc đoàn tụ gia đình, các lễ kỷ niệm đặc biệt sẽ giúp bạn củng cố và gắn kết với nhau
                     </p>
                     <div className="wrap-rooms">
                    
