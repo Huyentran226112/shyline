@@ -73,27 +73,27 @@ function Footer(props) {
                                     <ul>
                                         <li>
                                             <a href="attractions.html" title="">
-                                                Site Map
+                                                Về Skyline
                                             </a>
                                         </li>
                                         <li>
                                             <a href="tems_condition_1.html" title="">
-                                                Term &amp; Conditions
+                                                Về chúng tôi
                                             </a>
                                         </li>
                                         <li>
                                             <a href="#" title="">
-                                                Privacy Policy
+                                                Liên hệ
                                             </a>
                                         </li>
                                         <li>
                                             <a href="#" title="">
-                                                Help
+                                                Tuyển dụng
                                             </a>
                                         </li>
                                         <li>
                                             <a href="#" title="">
-                                                Affiliate
+                                                Câu hỏi thường gặp
                                             </a>
                                         </li>
                                     </ul>
@@ -104,22 +104,27 @@ function Footer(props) {
                                     <ul>
                                         <li>
                                             <a href="#" title="">
-                                                Our Location
+                                                Điều khoản & Quy định
                                             </a>
                                         </li>
                                         <li>
                                             <a href="#" title="">
-                                                Career
+                                                Điều khoản chung
                                             </a>
                                         </li>
                                         <li>
                                             <a href="about.html" title="">
-                                                About Us
+                                                Quy định chung
                                             </a>
                                         </li>
                                         <li>
                                             <a href="contact.html" title="">
-                                                Contact Us
+                                                Quy định về thanh toán
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="contact.html" title="">
+                                                Chính sách quyền riêng tư
                                             </a>
                                         </li>
                                     </ul>
@@ -130,27 +135,27 @@ function Footer(props) {
                                     <ul>
                                         <li>
                                             <a href="#" title="">
-                                                FAQS
+                                                Tin tức & Sự kiện
                                             </a>
                                         </li>
                                         <li>
                                             <a href="#" title="">
-                                                News
+                                                Tin công ty
                                             </a>
                                         </li>
                                         <li>
                                             <a href="gallery_1.html" title="">
-                                                Photo &amp; Video
+                                                Cẩm nang du lịch
                                             </a>
                                         </li>
                                         <li>
                                             <a href="restaurant_1.html" title="">
-                                                Restaurant
+                                               Thành tựu
                                             </a>
                                         </li>
                                         <li>
                                             <a href="#" title="">
-                                                Gift Card
+                                                Thẻ quà tặng
                                             </a>
                                         </li>
                                     </ul>

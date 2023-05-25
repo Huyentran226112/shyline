@@ -4,9 +4,7 @@ import React from 'react';
 import Slider from '../components/home/Slider';
 import Room from '../components/home/Room';
 import About from '../components/home/About';
-import Best from '../components/home/Best';
 import Testimonials from '../components/home/Testimonials';
-import News from '../components/home/News';
 import LayoutMaster from '../layouts/LayoutMaster';
 
 function Home(props) {
@@ -15,10 +13,7 @@ function Home(props) {
             <Slider />
             <Room />
             <About />
-            <Best />
             <Testimonials />
-            <Best />
-            <News />
         </LayoutMaster>
     );
 }

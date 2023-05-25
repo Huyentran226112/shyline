@@ -14,14 +14,13 @@ function Header(props) {
                         <div className="header-top-left">
                             <span>
                                 <i className="ion-android-cloud-outline" />
-                                18 °C
+                                40 °C
                             </span>
                             <span>
-                                <i className="ion-ios-location-outline" /> 121 King Str, Melbourne
-                                Victoria
+                                <i className="ion-ios-location-outline" /> 133 Lý Thường Kiệt, Tp Đông Hà
                             </span>
                             <span>
-                                <i className="fa fa-phone" aria-hidden="true" /> 1-548-854-8898
+                                <i className="fa fa-phone" aria-hidden="true" /> 0774-403-730
                             </span>
                         </div>
 

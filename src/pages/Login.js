@@ -4,6 +4,7 @@ import { Link, useNavigate } from "react-router-dom";
 import * as Yup from "yup";
 import { Field, Form, Formik } from "formik";
 import LayoutMaster from "../layouts/LayoutMaster";
+import CustomerModel from "../models/CustomerModel";
 
 const validationSchema = Yup.object().shape({
   email: Yup.string().email("Email không hợp lệ").required("Email là bắt buộc"),
@@ -30,7 +31,7 @@ const Login = () => {
       .post("http://127.0.0.1:8000/api/auth/login-customer", values)
       .then((response) => {
         console.log(response);
-        localStorage.setItem("customer", JSON.stringify(response.data.user));
+        CustomerModel.setCookie('customer',JSON.stringify(response.data.user), response.expires_in)
         localStorage.setItem("token", response.data.access_token);
       //   const { name } = response.data; // Lấy tên người dùng từ phản hồi API
       // setUsername(name); // Cập nhật giá trị của username trong state
