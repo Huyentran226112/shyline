@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import LayoutMaster from "../layouts/LayoutMaster";
 import PageBanner from "../components/global/PageBanner";
 import { useSelector } from "react-redux";
@@ -10,6 +10,7 @@ import axios from "axios";
 import CustomerModel from "../models/CustomerModel";
 
 function Checkout(props) {
+  const [isProcessing, setIsProcessing] = useState(false);
   const navigate = useNavigate();
   const cart = useSelector((state) => state.cart);
   const room = cart.room ?? {};
@@ -37,7 +38,7 @@ function Checkout(props) {
       room_id: cart.room_id,
       customer_id: customer.id,
     };
-
+    setIsProcessing(true); // Đặt trạng thái là đang xử lý
     axios
       .post("http://127.0.0.1:8000/api/orders", orderData)
       .then((response) => {
@@ -58,6 +59,9 @@ function Checkout(props) {
           icon: 'error',
           title: 'Đặt phòng thất bại',
         });
+      })
+      .finally(() => {
+        setIsProcessing(false); // Đặt trạng thái là không xử lý
       });
   };
 
@@ -163,7 +167,7 @@ function Checkout(props) {
                     </p>
                   </div>
                   <button type="submit" className="checkout-btn btn">
-                    Đặt phòng
+                  {isProcessing ? "Đang xử lý..." : "Đặt phòng"}
                   </button>
                 </div>
               </div>

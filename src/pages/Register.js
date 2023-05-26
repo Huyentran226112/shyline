@@ -20,11 +20,11 @@ const rules = Yup.object().shape({
   .min(3, "Toi thieu 4 ky tu")
   .max(255, "Toi da 255"),
   phone: Yup.string()
-  .required("Vui lòng nhập sđt")
+  .required("Vui lòng nhập SĐT")
   .min(3, "Toi thieu 9 ky tu")
   .max(255, "Toi da 10"),
   password: Yup.string()
-  .required("Vui lòng nhập password")
+  .required("Vui lòng nhập mật khẩu")
   .min(3, "Toi thieu 4 ky tu")
   .max(255, "Toi da 255"),
 });
@@ -91,10 +91,6 @@ const RegisterForm = () => {
               {errors.phone && touched.phone ? <div className="form-error">{errors.phone}</div> : null}
               <div className="form-group">
               <Field type="password" name="password" className="form-control" placeholder="Nhập mật khẩu"/>
-              </div>
-              {errors.password && touched.password ? <div className="form-error">{errors.password}</div> : null}
-              <div className="form-group">
-              <Field type="password" name="password" className="form-control" placeholder="Nhập lại mật khẩu"/>
               </div>
               {errors.password && touched.password ? <div className="form-error">{errors.password}</div> : null}
               <button type="submit" className="btn btn-default">
