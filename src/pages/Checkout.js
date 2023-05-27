@@ -26,7 +26,7 @@ function Checkout(props) {
     };
   }
 
-  const handleSubmit = (values) => {
+  const handleSubmit = (values,) => {
     const formattedCheckin = new Date(cart.checkin).toISOString().split("T")[0];
     const formattedCheckout = new Date(cart.checkout).toISOString().split("T")[0];
     const orderData = {
