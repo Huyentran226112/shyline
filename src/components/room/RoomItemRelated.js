@@ -13,8 +13,11 @@ function RoomItemRelated(props) {
                 </div>
                 <div className="text">
                     <h2>
-                        <a >{room.name}</a>
+                       {room.name}
                     </h2>
+                    <h5>
+                    {room.status == 1 ? 'Còn phòng' : 'Hết phòng' }
+                    </h5>
                     <Link to={"/RoomDetail/" + room.id} className="btn">
                         CHI TIẾT PHÒNG 
                         </Link>

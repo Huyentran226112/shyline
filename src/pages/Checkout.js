@@ -42,7 +42,7 @@ function Checkout(props) {
     axios
       .post("http://127.0.0.1:8000/api/orders", orderData)
       .then((response) => {
-        // Xử lý thành công khi đặt hàng
+        // Xử lý thành công khi đặt hàng  
         Swal.fire({
           icon: 'success',
           title: 'Bạn đã đặt phòng thành công',

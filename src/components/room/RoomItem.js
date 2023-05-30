@@ -12,7 +12,9 @@ function RoomItem(props) {
                         {room.name}
                         </a> </h2> 
                         <h5>{room.category_name}</h5>
-                <div className="img">
+                        <h5>
+                        {room.status == 1 ? 'Còn phòng' : 'Hết phòng' }</h5>
+                    <div className="img">
                     <a href="/roomdetail">
                         <img src={room.image} alt="#" />
                     </a>
