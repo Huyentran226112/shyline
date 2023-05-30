@@ -102,7 +102,7 @@ function RoomDetail(props) {
                       <div className="product-detail_overview">
                         <h1 className="price">
                           <span className="amout">{room.price_format}vnd</span>{" "}
-                          /days
+                          /ngày
                         </h1>
                       </div>
                     </div>

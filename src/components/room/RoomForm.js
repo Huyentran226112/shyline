@@ -69,7 +69,7 @@ function RoomForm(props) {
               <label>Tên phòng: {room.name}</label>
             </div>
             <div className="check_availability-field">
-              <label>Giá: {room.price_format}VND /days</label>
+              <label>Giá: {room.price_format}VND /ngày</label>
             </div>
             <div className="check_availability-field">
               <label>Ngày nhận</label>

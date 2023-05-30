@@ -36,13 +36,13 @@ const Login = () => {
       //   const { name } = response.data; // Lấy tên người dùng từ phản hồi API
       // setUsername(name); // Cập nhật giá trị của username trong state
         alert("Đăng nhập thành công");
-        navigate("/"); // Chuyển hướng đến trang Dashboard sau khi đăng nhập thành công
+        navigate("/room"); // Chuyển hướng đến trang Dashboard sau khi đăng nhập thành công
       //   console.log(response);
       })
       .catch((error) => {
         setMsg('Email hoặc mật khẩu không đúng');
         // Xử lý lỗi
-        console.log(error.response.data.error);
+        console.log(error.response.data.error);   
       });
   };
   return (
