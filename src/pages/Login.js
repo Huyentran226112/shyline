@@ -74,6 +74,7 @@ const Login = () => {
                       type="password"
                       name="password"
                       className="form-control"
+                      placeholder="Nhập password"
                     />
                     {errors.password && touched.password && (
                       <div className="form-error">{errors.password}</div>
